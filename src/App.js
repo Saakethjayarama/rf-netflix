@@ -1,10 +1,12 @@
 import "./App.css";
 import Row from "./components/Row";
+import Banner from "./components/Banner";
 import { uri } from "./TMDB/uri";
 
 function App() {
   return (
     <div className="App">
+      <Banner />
       <Row
         title="NETFLIX ORIGINALS"
         fetchURL={uri.fetchNetflixOriginals}

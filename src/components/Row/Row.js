@@ -14,21 +14,17 @@ function Row({ title, fetchURL, isLargeRow }) {
     })();
   }, [fetchURL]);
 
-  console.table(movies);
-
   return (
     <div className="Row">
       <h2 className="Row__title">{title}</h2>
       <div className="Row__Posters">
         {movies.map((movie) => (
-          <React.Fragment>
-            <img
-              key={movie.id}
-              src={`${base_uri}${movie.poster_path}`}
-              alt={movie.name}
-              className={isLargeRow ? `Row__image Large` : `Row__image`}
-            />
-          </React.Fragment>
+          <img
+            key={movie.id}
+            src={`${base_uri}${movie.poster_path}`}
+            alt={movie.name}
+            className={isLargeRow ? `Row__image Large` : `Row__image`}
+          />
         ))}
       </div>
     </div>
