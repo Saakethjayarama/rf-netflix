@@ -1,0 +1,35 @@
+.Row {
+  padding-left: 10px;
+}
+
+.Row__title {
+  padding-left: 20px;
+}
+
+.Row__Posters {
+  display: flex;
+  margin-left: 20px;
+  padding: 20px 10px;
+  overflow-x: scroll;
+}
+
+.Row__Posters::-webkit-scrollbar {
+  display: none;
+}
+
+.Row__image {
+  object-fit: contain;
+  width: 100%;
+  max-height: 200px;
+  margin-right: 20px;
+  transition: transform 0.4s;
+  cursor: pointer;
+}
+
+.Large {
+  max-height: 225px;
+}
+
+.Row__image:hover {
+  transform: scale(1.08);
+}
