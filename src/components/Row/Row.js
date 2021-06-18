@@ -30,13 +30,13 @@ function Row({ title, fetchURL, isLargeRow }) {
     } else {
       setCurrentTrailerMovieId(movieId);
       const selectedMovie = movies.filter((mv) => mv.id == movieId)[0];
-      console.log(selectedMovie);
 
       movieTrailer(selectedMovie?.name || selectedMovie?.title || "")
         .then((url) => {
-          setTrailerUrl(new URLSearchParams(new URL(url).search).get("v"));
+          if (url)
+            setTrailerUrl(new URLSearchParams(new URL(url).search).get("v"));
         })
-        .catch((err) => console.error(err));
+        .catch((err) => console.log(err));
     }
   };
 
