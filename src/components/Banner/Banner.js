@@ -14,7 +14,8 @@ function Banner() {
       const randomIndex = Math.floor(
         Math.random() * response.data.results.length - 1
       );
-      setMovie(response.data.results[randomIndex]);
+      const mv = { ...response.data.results[randomIndex] };
+      setMovie(mv);
     })();
   }, []);
 
@@ -24,9 +25,7 @@ function Banner() {
     <header
       className="Banner"
       style={{
-        background: ` url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
-        backgroundPosition: "center center",
-        backgroundSize: "cover",
+        background: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
       }}
     >
       <div className="Banner__gradient"></div>

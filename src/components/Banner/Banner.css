@@ -2,6 +2,7 @@
   color: white;
   min-height: 448px;
   position: relative;
+  background-size: cover !important;
 }
 .Banner__gradient {
   /* background-color: red; */
