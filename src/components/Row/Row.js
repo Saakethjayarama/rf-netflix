@@ -10,7 +10,12 @@ function Row({ title, fetchURL, isLargeRow }) {
   useEffect(() => {
     (async () => {
       const response = await axios.get(fetchURL);
-      setMovies(response.data.results);
+      const mvs = [];
+
+      response.data.results.forEach((mv) => {
+        if (mv.poster_path != null || mv.poster_path != undefined) mvs.push(mv);
+      });
+      setMovies(mvs);
     })();
   }, [fetchURL]);
 

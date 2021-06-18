@@ -4,6 +4,7 @@
   position: relative;
   background-size: cover !important;
 }
+
 .Banner__gradient {
   /* background-color: red; */
   height: 7.4rem;
@@ -58,4 +59,30 @@
   max-width: 360px;
   height: 80px;
   font-weight: bold;
+}
+
+.Banner_description::first-letter {
+  text-transform: capitalize;
+}
+
+.Banner__head {
+  top: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px;
+}
+
+.Banner__logo {
+  height: 50px;
+  object-fit: contain;
+}
+
+.Banner__acc {
+  height: 50px;
+  object-fit: contain;
 }

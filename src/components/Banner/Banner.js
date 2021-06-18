@@ -15,11 +15,15 @@ function Banner() {
         Math.random() * response.data.results.length - 1
       );
       const mv = { ...response.data.results[randomIndex] };
-      setMovie(mv);
+      let { overview } = mv;
+      console.log(overview);
+      if (overview.length > 223) {
+        overview = overview.slice(223) + "...";
+      }
+
+      setMovie({ ...mv, overview });
     })();
   }, []);
-
-  console.log(movie);
 
   return (
     <header
@@ -28,6 +32,15 @@ function Banner() {
         background: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
       }}
     >
+      <div className="Banner__head">
+        {/* Netflix icon */}
+        <img src="./netflix.png" className="Banner__logo" />
+        {/* Acc Icon */}
+        <img
+          src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"
+          className="Banner__acc"
+        />
+      </div>
       <div className="Banner__gradient"></div>
       <div className="Banner_wrapper">
         {/* title */}
