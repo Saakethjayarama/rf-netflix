@@ -25,6 +25,18 @@ function Banner() {
     })();
   }, []);
 
+  const [isBlack, setBlack] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        setBlack(true);
+      } else setBlack(false);
+    });
+    return () => {
+      window.removeEventListener("scroll");
+    };
+  }, []);
+
   return (
     <header
       className="Banner"
@@ -32,7 +44,7 @@ function Banner() {
         background: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
       }}
     >
-      <div className="Banner__head">
+      <div className={isBlack ? "Banner__head Black" : "Banner__head BgNone"}>
         {/* Netflix icon */}
         <img src="./netflix.png" className="Banner__logo" />
         {/* Acc Icon */}
